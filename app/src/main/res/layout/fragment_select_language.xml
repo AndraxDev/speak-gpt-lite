@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**************************************************************************
+* Copyright (c) 2023-2025 Dmytro Ostapenko. All rights reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*  http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+**************************************************************************/
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dialog_l_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/title_select_language"
+        android:textColor="@color/text_title"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_l_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="84dp">
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngEn"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" English"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngFr"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" French (Français)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngDe"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" German (Deutsch)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngIt"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Italian (Italiano)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngJp"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Japanese (日本)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngKp"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Korean (한국인)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngCnS"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Chinese (Simplified) (中文(简体))"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:id="@+id/lngCnT"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Chinese (Traditional) (中文(繁体))"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngEs"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Spanish (Español)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngUk"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Ukrainian (Українська)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngRu"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Russian (Русский)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngPl"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Polish (Polski)"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:button="@null"
+                    android:paddingEnd="8dp"
+                    android:paddingStart="8dp"
+                    android:id="@+id/lngTr"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text=" Turkish (Türk)"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

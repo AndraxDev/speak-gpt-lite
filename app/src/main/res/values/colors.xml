@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="black">#ff000000</color>
+    <color name="purple_50">#F7F6F8</color>
+    <color name="purple_100">#F3EBFF</color>
+    <color name="purple_150">#E7D6FF</color>
+    <color name="purple_200">#DAB8FF</color>
+    <color name="purple_500">#ff6200ee</color>
+    <color name="purple_700">#ff3700b3</color>
+    <color name="purple_800">#FF240077</color>
+    <color name="purple_900">#FF0C1350</color>
+    <color name="shadow">#99000000</color>
+    <color name="text">#ee000000</color>
+    <color name="hint">#aa000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="warning">#ffff3d00</color>
+    <color name="delete_active">#7A2821</color>
+    <color name="pin_active">#2C3F85</color>
+    <color name="delete">#5A332C</color>
+    <color name="pin">#31344E</color>
+    <color name="delete_tint">#33B36E68</color>
+    <color name="pin_tint">#334C5ABA</color>
+    <color name="delete_tint_active">#55FF4331</color>
+    <color name="pin_tint_active">#552F49FF</color>
+    <color name="colorSurface">#ffbb86fc</color>
+
+    <color name="amoled_accent_50">#090909</color>
+    <color name="amoled_accent_100">#191919</color>
+    <color name="amoled_accent_200">#1E1E1E</color>
+    <color name="amoled_accent_250">#242424</color>
+    <color name="amoled_accent_400">#292929</color>
+    <color name="amoled_accent_300">#323232</color>
+    <color name="amoled_accent_500">#3F3F3F</color>
+    <color name="amoled_accent_600">#3F3F3F</color>
+    <color name="amoled_accent_900">#CECECE</color>
+    <color name="amoled_bottom_navbar">@color/accent_50</color>
+    <color name="amoled_button">@color/accent_100</color>
+    <color name="amoled_window_background">#000000</color>
+
+    <color name="accent_50">#FFF4FE</color>
+    <color name="accent_100">#EFEBFF</color>
+    <color name="accent_100x2">#F4ECFF</color>
+    <color name="accent_200">#F3E6FF</color>
+    <color name="accent_250">#E8DEFF</color>
+    <color name="accent_250_static">#E8DEFF</color>
+    <color name="accent_300">#EAD9FF</color>
+    <color name="accent_400">#DAD0FF</color>
+    <color name="accent_500">#302936</color>
+    <color name="accent_600">#221F28</color>
+    <color name="accent_900">#27222D</color>
+    <color name="neutral_200">#312e36</color>
+    <color name="shadow_assistant">#e3dfec</color>
+    <color name="fab">@color/accent_100</color>
+    <color name="icon_background">@color/accent_100</color>
+    <color name="icon_foreground">@color/accent_900</color>
+    <color name="bottom_navbar">@color/accent_900</color>
+    <color name="button">@color/accent_900</color>
+    <color name="error">#4F1E1A</color>
+    <color name="success">#263E22</color>
+    <color name="gray">#99999999</color>
+    <color name="window_background">#fdfbff</color>
+    <color name="disabled">#DD666666</color>
+    <color name="green">#FF00FF00</color>
+    <color name="light_red">#E83A3A</color>
+    <color name="light_green">#AADC79</color>
+    <color name="tip1">#333b2f</color>
+    <color name="tip">#201C5500</color>
+    <color name="light_blue">#9592E4</color>
+    <color name="text_title">#FF000000</color>
+    <color name="text_title_inv">#FFFFFFFF</color>
+    <color name="text_subtitle">#AA000000</color>
+    <color name="text_field">#CC000000</color>
+    <color name="text_hint">#000000</color>
+    <color name="text_subtitle_inv">#AAFFFFFF</color>
+    <color name="ripple">#32000000</color>
+    <color name="ripple_bg">#FF000000</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/accent_900</color>
+    <color name="system_bars">@color/accent_100</color>
+    <color name="marker">#15000000</color>
+    <color name="warn_bg">#22CB493D</color>
+    <color name="disabled_background">#66666666</color>
+    <color name="disabled_icon">#FF666666</color>
+
+    <color name="cat_development">#573329</color>
+    <color name="cat_music">#522929</color>
+    <color name="cat_art">#272E4E</color>
+    <color name="cat_culture">#263729</color>
+    <color name="cat_business">#463656</color>
+    <color name="cat_gaming">#2E3E27</color>
+    <color name="cat_education">#2A3E42</color>
+    <color name="cat_history">#2E4539</color>
+    <color name="cat_food">#402A3C</color>
+    <color name="cat_tourism">#422D33</color>
+    <color name="cat_productivity">#393C28</color>
+    <color name="cat_tools">#232C3E</color>
+    <color name="cat_entertainment">#3E3329</color>
+    <color name="cat_sport">#263723</color>
+    <color name="cat_health">#22352C</color>
+    <color name="grey">#000000</color>
+
+    <color name="bg_cat_development">#FFECE6</color>
+    <color name="bg_cat_music">#FFEBEE</color>
+    <color name="bg_cat_art">#E8EAF6</color>
+    <color name="bg_cat_culture">#E8F5E9</color>
+    <color name="bg_cat_business">#EDE7F6</color>
+    <color name="bg_cat_gaming">#F1F8E9</color>
+    <color name="bg_cat_education">#E0F2F1</color>
+    <color name="bg_cat_history">#E8F5E9</color>
+    <color name="bg_cat_food">#FCE4EC</color>
+    <color name="bg_cat_tourism">#F3E5F5</color>
+    <color name="bg_cat_productivity">#FFFDE7</color>
+    <color name="bg_cat_tools">#E3F2FD</color>
+    <color name="bg_cat_entertainment">#FFF8E1</color>
+    <color name="bg_cat_sport">#CBFFC4</color>
+    <color name="bg_cat_health">#E8F5EC</color>
+    <color name="bg_grey">#E6E6E6</color>
+
+    <color name="tint_cat_development">#25974E00</color>
+    <color name="tint_cat_music">#25730000</color>
+    <color name="tint_cat_art">#25000E55</color>
+    <color name="tint_cat_culture">#2500530A</color>
+    <color name="tint_cat_business">#2538006A</color>
+    <color name="tint_cat_gaming">#251C6500</color>
+    <color name="tint_cat_education">#25005D63</color>
+    <color name="tint_cat_history">#2500602E</color>
+    <color name="tint_cat_food">#2560004B</color>
+    <color name="tint_cat_tourism">#25460016</color>
+    <color name="tint_cat_productivity">#25505900</color>
+    <color name="tint_cat_tools">#25001E5A</color>
+    <color name="tint_cat_entertainment">#25532A00</color>
+    <color name="tint_cat_sport">#250C4700</color>
+    <color name="tint_cat_health">#25005329</color>
+    <color name="tint_grey">#25494949</color>
+
+    <color name="tint2_cat_development">#14974E00</color>
+    <color name="tint2_cat_music">#14730000</color>
+    <color name="tint2_cat_art">#14000E55</color>
+    <color name="tint2_cat_culture">#1400530A</color>
+    <color name="tint2_cat_business">#1438006A</color>
+    <color name="tint2_cat_gaming">#141C6500</color>
+    <color name="tint2_cat_education">#14005D63</color>
+    <color name="tint2_cat_history">#1400602E</color>
+    <color name="tint2_cat_food">#1460004B</color>
+    <color name="tint2_cat_tourism">#14460016</color>
+    <color name="tint2_cat_productivity">#14505900</color>
+    <color name="tint2_cat_tools">#14001E5A</color>
+    <color name="tint2_cat_entertainment">#14532A00</color>
+    <color name="tint2_cat_sport">#140C4700</color>
+    <color name="tint2_cat_health">#14005329</color>
+    <color name="tint2_grey">#14494949</color>
+
+    <color name="tint_cat_development_active">#50974E00</color>
+    <color name="tint_cat_music_active">#50730000</color>
+    <color name="tint_cat_art_active">#50000E55</color>
+    <color name="tint_cat_culture_active">#5000530A</color>
+    <color name="tint_cat_business_active">#5038006A</color>
+    <color name="tint_cat_gaming_active">#501C6500</color>
+    <color name="tint_cat_education_active">#50005D63</color>
+    <color name="tint_cat_history_active">#5000602E</color>
+    <color name="tint_cat_food_active">#5060004B</color>
+    <color name="tint_cat_tourism_active">#50460016</color>
+    <color name="tint_cat_productivity_active">#50505900</color>
+    <color name="tint_cat_tools_active">#50001E5A</color>
+    <color name="tint_cat_entertainment_active">#50532A00</color>
+    <color name="tint_cat_sport_active">#500C4700</color>
+    <color name="tint_cat_health_active">#50005329</color>
+
+    <color name="tint_red">#25730000</color>
+    <color name="gpt_icon_red">#730000</color>
+
+    <color name="tint_yellow">#25736000</color>
+    <color name="gpt_icon_yellow">#736000</color>
+
+    <color name="tint_green">#250C7300</color>
+    <color name="gpt_icon_green">#087300</color>
+
+    <color name="tint_blue">#25003873</color>
+    <color name="gpt_icon_blue">#003D73</color>
+
+    <color name="tint_purple">#25631780</color>
+    <color name="gpt_icon_purple">#5A0073</color>
+
+    <color name="tint_orange">#25733600</color>
+    <color name="gpt_icon_orange">#733600</color>
+
+    <color name="tint_cyan">#25007373</color>
+    <color name="gpt_icon_cyan">#007373</color>
+
+    <color name="tint_epic">#207F45B4</color>
+    <color name="gpt_icon_epic">#46218E</color>
+
+    <color name="border">#33000000</color>
+
+    <color name="pwa_background">#121417</color>
+    <color name="pwa_accent">#bbd3ff</color>
+
+    <color name="light_1">#05000000</color>
+    <color name="light_2">#17000000</color>
+</resources>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+        <package android:name="org.teslasoft.assistant" />
+        <package android:name="com.teslasoft.libraries.support" />
+    </queries>
+
+    <!-- Backup is forbidden because app uses a unique random key to encrypt user data after
+         re-installation. Restored data will not be compatible. Backup is unrecoverable. -->
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/UI.Material"
+        android:name="org.teslasoft.assistant.app.MainApplication"
+        android:installLocation="auto"
+        android:enableOnBackInvokedCallback="true"
+        tools:replace="android:allowBackup"
+        tools:targetApi="35">
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.MainActivity"
+            android:launchMode="singleTask"
+            android:exported="true">
+
+            <intent-filter android:priority="1000">
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="assistant.teslasoft.org"/>
+                <data android:pathPrefix="/chat"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.ChatActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Transparent"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.ApiEndpointsListActivity"
+            android:exported="false"
+            android:label="@string/title_api_endpoints">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.LogitBiasConfigActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.LogitBiasConfigListActivity"
+            android:exported="false"
+            android:label="@string/label_logit_bias">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.core.CrashHandlerActivity"
+            android:exported="false"
+            android:label="App has been crashed"
+            android:theme="@style/UI.Fade">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.TipsActivity"
+            android:exported="false"
+            android:label="@string/menu_tips"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.DocumentationActivity"
+            android:exported="false"
+            android:label="@string/title_documentation"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.onboarding.WelcomeActivity"
+            android:exported="false"
+            android:label="@string/title_welcome_to_speakgpt"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.assistant.AssistantActivity"
+            android:taskAffinity=".ui.assistant.AssistantActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Assistant"
+            android:allowTaskReparenting="true"
+            android:allowEmbedded="true"
+            android:excludeFromRecents="true"
+            android:windowSoftInputMode="adjustPan"
+            android:label="@string/title_speakgpt_mobile_assistant"
+            android:launchMode="singleTask">
+
+            <intent-filter>
+                <action android:name="android.intent.action.ASSIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/png" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/jpg" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="assistant.teslasoft.org"/>
+                <data android:pathPrefix="/assistant"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.AboutActivity"
+            android:exported="false"
+            android:label="@string/title_about_app"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.onboarding.TermsActivity"
+            android:exported="false"
+            android:label="@string/title_terms_of_service"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.onboarding.ActivationActivity"
+            android:exported="false"
+            android:label="@string/title_setup_api_endpoint"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings"
+            android:theme="@style/Theme.Transparent"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.DataSafety"
+            android:exported="false"
+            android:label="@string/label_privacy_policy"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.debug.DebugActivity"
+            android:exported="false"
+            android:enabled="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.AIPhotoEditorActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.PhotoVariationsActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.ft.FineTuneJobInfoActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.ft.FineTuneJobsActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.ft.FineTuneNewJobActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.TranslatorActivity"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.permission.MicrophonePermissionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Transparent"
+            android:label="@string/label_microphone_permission_requested"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.permission.CameraPermissionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Transparent"
+            android:label="@string/label_camera_permission_requested"
+            android:launchMode="singleTask">
+        </activity>
+
+        <activity
+            android:name="org.teslasoft.assistant.ui.activities.ImageBrowserActivity"
+            android:exported="false"
+            android:theme="@style/UI.Fade"
+            android:label="@string/label_generated_image"
+            android:launchMode="singleTask">
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="org.teslasoft.assistant.lite.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

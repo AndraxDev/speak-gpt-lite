@@ -1,0 +1,153 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent_100</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorAccent">@color/accent_900</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:statusBarColor">@color/window_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/window_background</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/roboto_ttf</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
+    </style>
+
+    <style name="Theme.Preview" parent="Theme.App">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+    <style name="AssistantWindowTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AssistantWindowStyle</item>
+        <item name="colorPrimary">@color/accent_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent_100</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorAccent">@color/accent_900</item>
+        <item name="android:windowAnimationStyle">@style/AssistantWindowAnimation</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/default_font</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="AssistantWindowAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/assistant_entry</item>
+        <item name="android:windowExitAnimation">@anim/assistant_exit</item>
+        <item name="android:activityOpenEnterAnimation">@anim/assistant_entry</item>
+        <item name="android:activityOpenExitAnimation">@anim/assistant_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/assistant_entry</item>
+        <item name="android:activityCloseExitAnimation">@anim/assistant_exit</item>
+        <item name="android:inAnimation">@anim/assistant_entry</item>
+        <item name="android:outAnimation">@anim/assistant_exit</item>
+        <item name="android:fragmentOpenEnterAnimation">@anim/assistant_entry</item>
+        <item name="android:fragmentOpenExitAnimation">@anim/assistant_exit</item>
+        <item name="android:fragmentCloseEnterAnimation">@anim/assistant_entry</item>
+        <item name="android:fragmentCloseExitAnimation">@anim/assistant_exit</item>
+    </style>
+
+    <style name="AssistantWindowStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="UI.Fade" parent="Theme.App">
+        <item name="android:windowAnimationStyle">@style/Theme.Anim.Fade.Material</item>
+    </style>
+
+    <style name="UI.Material" parent="Theme.App">
+        <item name="android:windowAnimationStyle">@style/Theme.Anim.Fade.Material</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="@style/Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/shadow</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">#99000000</item>
+        <item name="colorAccent">@color/accent_900</item>
+        <item name="colorPrimary">#ff121212</item>
+        <item name="colorPrimaryDark">#ff121212</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/default_font</item>
+    </style>
+
+    <style name="Theme.Assistant" parent="@style/Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:navigationBarDividerColor">@color/transparent</item>
+        <item name="colorAccent">@color/accent_900</item>
+        <item name="colorPrimary">@color/transparent</item>
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/default_font</item>
+        <item name="android:windowActivityTransitions">false</item>
+    </style>
+
+    <style name="Theme.Anim.Fade.Material" parent="@style/Theme.AppCompat">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="Theme.Anim.Material" parent="@style/Theme.Material3.DayNight.NoActionBar">
+        <item name="android:activityOpenEnterAnimation">@anim/mtrl_activity_open_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/mtrl_activity_open_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/mtrl_activity_close_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/mtrl_activity_close_exit</item>
+    </style>
+
+    <style name="App.MaterialAlertDialog" parent="MaterialAlertDialog.Material3">
+        <item name="buttonBarNegativeButtonStyle">@style/App.NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/App.PositiveButtonStyle</item>
+    </style>
+
+    <style name="Theme.PWA" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/pwa_accent</item>
+        <item name="colorOnPrimary">@color/pwa_background</item>
+        <item name="colorSecondary">@color/pwa_accent</item>
+        <item name="colorOnSecondary">@color/pwa_background</item>
+        <item name="colorAccent">@color/pwa_accent</item>
+        <item name="android:statusBarColor">@color/pwa_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/pwa_background</item>
+        <item name="android:windowBackground">@color/pwa_background</item>
+        <item name="android:windowAnimationStyle">@style/Theme.Anim.Fade.Material</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:fontFamily">@font/default_font</item>
+    </style>
+
+    <style name="App.NegativeButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/accent_900</item>
+    </style>
+
+    <style name="App.PositiveButtonStyle" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/accent_900</item>
+    </style>
+
+    <style name="App.ExposedTextField" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+</resources>

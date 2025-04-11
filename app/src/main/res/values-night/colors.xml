@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="accent_50">#26262A</color>
+    <color name="accent_100">#302f36</color>
+    <color name="accent_100x2">#302f36</color>
+    <color name="accent_200">#424250</color>
+    <color name="accent_250">#424250</color>
+    <color name="accent_250_static">#424250</color>
+    <color name="accent_300">#424250</color>
+    <color name="accent_400">#424250</color>
+    <color name="accent_500">#a895e9</color>
+    <color name="accent_600">#a895e9</color>
+    <color name="accent_900">#c3b4ff</color>
+    <color name="neutral_200">#ddd9e6</color>
+    <color name="icon_50">@color/purple_50</color>
+    <color name="icon_100">@color/purple_100</color>
+    <color name="icon_150">@color/purple_150</color>
+    <color name="icon_500">@color/purple_500</color>
+    <color name="icon_700">@color/purple_700</color>
+    <color name="icon_900">@color/purple_900</color>
+    <color name="icon_background">@color/accent_100</color>
+    <color name="icon_foreground">@color/accent_900</color>
+    <color name="bottom_navbar">@color/accent_900</color>
+    <color name="button">@color/accent_900</color>
+    <color name="window_background">#1b1b1e</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">@color/accent_900</color>
+    <color name="text_title">#FFFFFFFF</color>
+    <color name="text_title_inv">#FF000000</color>
+    <color name="text_subtitle">#99FFFFFF</color>
+    <color name="text_field">#DEFFFFFF</color>
+    <color name="text_hint">#EEFFFFFF</color>
+    <color name="text_subtitle_inv">#99000000</color>
+    <color name="ripple">#32FFFFFF</color>
+    <color name="ripple_bg">#AAFFFFFF</color>
+    <color name="error">#FF6060</color>
+    <color name="success">#DFFFDA</color>
+    <color name="text">#eeffffff</color>
+    <color name="hint">#aaffffff</color>
+    <color name="tip1">#F3FFED</color>
+    <color name="tip">#15E4FFD6</color>
+    <color name="marker">#15FFFFFF</color>
+    <color name="warn_bg">#1F994444</color>
+    <color name="delete_active">#FF5647</color>
+    <color name="pin_active">#4E6AFF</color>
+    <color name="delete">#FFE3E0</color>
+    <color name="pin">#C4CEFF</color>
+    <color name="delete_tint_active">#22FF4333</color>
+    <color name="pin_tint_active">#222544FF</color>
+    <color name="delete_tint">#55884C46</color>
+    <color name="pin_tint">#554C579C</color>
+    <color name="colorSurface">#424250</color>
+
+    <color name="cat_development">#FFE0C5</color>
+    <color name="cat_music">#FFDDDD</color>
+    <color name="cat_art">#B4C1FF</color>
+    <color name="cat_culture">#BBFFC2</color>
+    <color name="cat_business">#E7CBFF</color>
+    <color name="cat_gaming">#CEFFBA</color>
+    <color name="cat_education">#B3FBFF</color>
+    <color name="cat_history">#AFFFD4</color>
+    <color name="cat_food">#FDBFEF</color>
+    <color name="cat_tourism">#FFC1D2</color>
+    <color name="cat_productivity">#F6FFB3</color>
+    <color name="cat_tools">#B8D0FF</color>
+    <color name="cat_entertainment">#FFDDB4</color>
+    <color name="cat_sport">#C0FFB5</color>
+    <color name="cat_health">#B0FFD3</color>
+    <color name="grey">#E2E2E2</color>
+
+    <color name="bg_cat_development">#211E1D</color>
+    <color name="bg_cat_music">#211D1D</color>
+    <color name="bg_cat_art">#1D1D21</color>
+    <color name="bg_cat_culture">#1C1F1C</color>
+    <color name="bg_cat_business">#1F1D21</color>
+    <color name="bg_cat_gaming">#1D1F1B</color>
+    <color name="bg_cat_education">#1D2121</color>
+    <color name="bg_cat_history">#1C1F1E</color>
+    <color name="bg_cat_food">#231F1F</color>
+    <color name="bg_cat_tourism">#242024</color>
+    <color name="bg_cat_productivity">#21211A</color>
+    <color name="bg_cat_tools">#1A1D23</color>
+    <color name="bg_cat_entertainment">#23211D</color>
+    <color name="bg_cat_sport">#1E211E</color>
+    <color name="bg_cat_health">#1E211F</color>
+    <color name="bg_grey">#1B1B1B</color>
+
+    <color name="tint_cat_development">#25B19284</color>
+    <color name="tint_cat_music">#25A17878</color>
+    <color name="tint_cat_art">#257C83AA</color>
+    <color name="tint_cat_culture">#25617E65</color>
+    <color name="tint_cat_business">#258A759E</color>
+    <color name="tint_cat_gaming">#258EAA82</color>
+    <color name="tint_cat_education">#2586B0B3</color>
+    <color name="tint_cat_history">#2582AE97</color>
+    <color name="tint_cat_food">#25B686AC</color>
+    <color name="tint_cat_tourism">#25B37387</color>
+    <color name="tint_cat_productivity">#25A5AA7C</color>
+    <color name="tint_cat_tools">#258390AE</color>
+    <color name="tint_cat_entertainment">#25B39C84</color>
+    <color name="tint_cat_sport">#258CB884</color>
+    <color name="tint_cat_health">#2588BFA3</color>
+    <color name="tint_grey">#259C9C9C</color>
+
+    <color name="tint2_cat_development">#14B19284</color>
+    <color name="tint2_cat_music">#14A17878</color>
+    <color name="tint2_cat_art">#147C83AA</color>
+    <color name="tint2_cat_culture">#14617E65</color>
+    <color name="tint2_cat_business">#148A759E</color>
+    <color name="tint2_cat_gaming">#148EAA82</color>
+    <color name="tint2_cat_education">#1486B0B3</color>
+    <color name="tint2_cat_history">#1482AE97</color>
+    <color name="tint2_cat_food">#14B686AC</color>
+    <color name="tint2_cat_tourism">#14B37387</color>
+    <color name="tint2_cat_productivity">#14A5AA7C</color>
+    <color name="tint2_cat_tools">#148390AE</color>
+    <color name="tint2_cat_entertainment">#14B39C84</color>
+    <color name="tint2_cat_sport">#148CB884</color>
+    <color name="tint2_cat_health">#1488BFA3</color>
+    <color name="tint2_grey">#149C9C9C</color>
+
+    <color name="tint_cat_development_active">#50ffddad</color>
+    <color name="tint_cat_music_active">#50ffadad</color>
+    <color name="tint_cat_art_active">#50b5c1ff</color>
+    <color name="tint_cat_culture_active">#50b9fac1</color>
+    <color name="tint_cat_business_active">#50e0c3fa</color>
+    <color name="tint_cat_gaming_active">#50daffcc</color>
+    <color name="tint_cat_education_active">#50caf9fc</color>
+    <color name="tint_cat_history_active">#50cafce2</color>
+    <color name="tint_cat_food_active">#50fccaf1</color>
+    <color name="tint_cat_tourism_active">#50FFD6E3</color>
+    <color name="tint_cat_productivity_active">#50faffcc</color>
+    <color name="tint_cat_tools_active">#50ccddff</color>
+    <color name="tint_cat_entertainment_active">#50ffe6cc</color>
+    <color name="tint_cat_sport_active">#50d5ffcc</color>
+    <color name="tint_cat_health_active">#50CCFFE5</color>
+    <color name="disabled_background">#66999999</color>
+    <color name="disabled_icon">#FF999999</color>
+
+    <color name="tint_red">#309C5E5E</color>
+    <color name="gpt_icon_red">#CCB4B4</color>
+
+    <color name="tint_yellow">#308E7B57</color>
+    <color name="gpt_icon_yellow">#D0C9BC</color>
+
+    <color name="tint_green">#297F9F73</color>
+    <color name="gpt_icon_green">#C2CCB4</color>
+
+    <color name="tint_blue">#30627797</color>
+    <color name="gpt_icon_blue">#B4BFCC</color>
+
+    <color name="tint_purple">#307F6298</color>
+    <color name="gpt_icon_purple">#C2B4CC</color>
+
+    <color name="tint_orange">#30977563</color>
+    <color name="gpt_icon_orange">#CCBEB4</color>
+
+    <color name="tint_cyan">#30639797</color>
+    <color name="gpt_icon_cyan">#B4CCCC</color>
+
+    <color name="tint_epic">#29BC9FD1</color>
+    <color name="gpt_icon_epic">#BE9AFF</color>
+
+    <color name="border">#38FFFFFF</color>
+
+    <color name="light_1">#05FFFFFF</color>
+    <color name="light_2">#12FFFFFF</color>
+</resources>

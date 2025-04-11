@@ -1,0 +1,93 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlinx-serialization'
+}
+
+configurations {
+    cleanedAnnotations
+    implementation.exclude group: 'org.jetbrains', module: 'annotations'
+}
+
+android {
+    namespace 'org.teslasoft.assistant.lite'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "org.teslasoft.assistant.lite"
+        minSdk 28
+        targetSdk 36
+        versionCode 43001
+        versionName "4.30-it1"
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexEnabled true
+        }
+
+        debug {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            multiDexEnabled true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    kotlinOptions {
+        jvmTarget = '21'
+    }
+
+    dependenciesInfo {
+        includeInApk false
+        includeInBundle false
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.16.0'
+    implementation 'androidx.activity:activity-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.13.0-alpha12'
+    implementation 'com.google.code.gson:gson:2.13.0'
+    implementation 'com.aallam.openai:openai-client:4.0.1'
+    implementation 'io.ktor:ktor-client-android:3.1.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'org.apache.commons:commons-lang3:3.17.0'
+    implementation 'commons-io:commons-io:2.18.0'
+    implementation 'io.noties.markwon:core:4.6.2'
+    implementation 'io.noties.markwon:html:4.6.2'
+    implementation 'io.noties.markwon:syntax-highlight:4.6.2'
+    implementation 'io.noties.markwon:recycler:4.6.2'
+    implementation 'io.noties.markwon:recycler-table:4.6.2'
+    implementation 'io.noties.markwon:ext-strikethrough:4.6.2'
+    implementation 'io.noties.markwon:ext-tables:4.6.2'
+    implementation 'io.noties.markwon:ext-tasklist:4.6.2'
+    implementation 'io.noties.markwon:ext-latex:4.6.2'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.14'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.security:security-crypto-ktx:1.1.0-alpha07'
+    implementation 'cat.ereza:customactivityoncrash:2.4.0'
+    implementation 'org.conscrypt:conscrypt-android:2.5.3'
+    implementation 'com.aallam.ktoken:ktoken:0.4.0'
+    implementation 'androidx.core:core-splashscreen:1.0.1'
+    implementation ('com.github.chrisbanes.photoview:library:1.2.4') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+
+    implementation ('io.noties:prism4j:2.0.0') {
+        exclude group: 'org.jetbrains', module: 'annotations'
+    }
+}
