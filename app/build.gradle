@@ -18,7 +18,7 @@ android {
         minSdk 28
         targetSdk 36
         versionCode 43001
-        versionName "4.30-it1"
+        versionName "4.30-it-01"
     }
 
     buildTypes {
