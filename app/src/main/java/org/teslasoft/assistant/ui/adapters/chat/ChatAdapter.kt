@@ -38,7 +38,6 @@ import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.LineHeightSpan
 import android.util.DisplayMetrics
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -81,6 +80,7 @@ import androidx.core.graphics.createBitmap
 import androidx.core.net.toUri
 import androidx.core.content.edit
 import org.scilab.forge.jlatexmath.ParseException
+import org.teslasoft.assistant.ui.fragments.dialogs.ReportAIContentBottomSheet
 
 
 class ChatAdapter(private val dataArray: ArrayList<HashMap<String, Any>>, private val selectorProjection: ArrayList<HashMap<String, Any>>, private val context: FragmentActivity, private val preferences: Preferences, private val isAssistant: Boolean, private var chatId: String) : RecyclerView.Adapter<ChatAdapter.ViewHolder>(), EditMessageDialogFragment.StateChangesListener {
@@ -123,7 +123,7 @@ class ChatAdapter(private val dataArray: ArrayList<HashMap<String, Any>>, privat
             else -> R.layout.view_message
         }
         val view = LayoutInflater.from(parent.context).inflate(layoutId, parent, false)
-        return ViewHolder(view, context)
+        return ViewHolder(view, context, chatId)
     }
 
     fun setOnUpdateListener(listener: OnUpdateListener) {
@@ -184,7 +184,7 @@ class ChatAdapter(private val dataArray: ArrayList<HashMap<String, Any>>, privat
         listener?.onChangeBulkActionMode(true)
     }
 
-    open inner class ViewHolder(itemView: View, private val debugContext: Context) : RecyclerView.ViewHolder(itemView) {
+    open inner class ViewHolder(itemView: View, private val debugContext: Context, private val chatId: String) : RecyclerView.ViewHolder(itemView) {
         private val ui: ConstraintLayout = itemView.findViewById(R.id.ui)
         private val icon: ImageView = itemView.findViewById(R.id.icon)
         private val message: TextView = itemView.findViewById(R.id.message)
@@ -194,12 +194,14 @@ class ChatAdapter(private val dataArray: ArrayList<HashMap<String, Any>>, privat
         private val btnCopy: ImageButton = itemView.findViewById(R.id.btn_copy)
         private val btnEdit: ImageButton = itemView.findViewById(R.id.btn_edit)
         private val btnRetry: ImageButton = itemView.findViewById(R.id.btn_retry)
+        private val btnReport: ImageButton = itemView.findViewById(R.id.btn_report)
 
         @SuppressLint("SetTextI18n", "SetJavaScriptEnabled")
         open fun bind(chatMessage: HashMap<String, Any>, position: Int) {
 
             updateUI(chatMessage)
             updateRetryButton(chatMessage, position)
+            updateReportButton(chatMessage)
 
             if (selectorProjection[position]["selected"].toString() == "true") {
                 ui.setBackgroundColor(getSurface3Color(context))
@@ -216,6 +218,11 @@ class ChatAdapter(private val dataArray: ArrayList<HashMap<String, Any>>, privat
                 if (bulkActionMode) {
                     switchBulkActionState(position)
                 }
+            }
+
+            btnReport.setOnClickListener {
+                val reportBottomSheet = ReportAIContentBottomSheet.newInstance(chatMessage["message"].toString(), chatId, true)
+                reportBottomSheet.show(context.supportFragmentManager, "ReportAIContentBottomSheet")
             }
 
             message.setOnLongClickListener {
@@ -298,6 +305,14 @@ class ChatAdapter(private val dataArray: ArrayList<HashMap<String, Any>>, privat
                 updateBubbleLayout(chatMessage)
             } else {
                 updateClassicLayout(chatMessage)
+            }
+        }
+
+        private fun updateReportButton(chatMessage: HashMap<String, Any>) {
+            if (chatMessage["isBot"] == true) {
+                btnReport.visibility = View.VISIBLE
+            } else {
+                btnReport.visibility = View.GONE
             }
         }
 

@@ -174,6 +174,7 @@ import kotlin.coroutines.coroutineContext
 import kotlin.time.Duration.Companion.seconds
 import androidx.core.graphics.scale
 import androidx.core.graphics.createBitmap
+import androidx.core.net.toUri
 import org.teslasoft.assistant.preferences.EncryptedPreferences
 
 
@@ -1288,7 +1289,7 @@ class ChatActivity : FragmentActivity(), ChatAdapter.OnUpdateListener {
 
         btnVisionActionGallery?.setOnClickListener {
             visionActions?.visibility = View.GONE
-            openFile(Uri.parse("/storage/emulated/0/image.png"))
+            openFile("/storage/emulated/0/image.png".toUri())
         }
 
         btnVisionActionCamera?.setOnClickListener {
@@ -1346,7 +1347,7 @@ class ChatActivity : FragmentActivity(), ChatAdapter.OnUpdateListener {
                 addCategory(Intent.CATEGORY_OPENABLE)
                 type = "application/json"
                 putExtra(Intent.EXTRA_TITLE, "$chatId.json")
-                putExtra(DocumentsContract.EXTRA_INITIAL_URI, Uri.parse("/mnt/sdcard/SpeakGPT/$chatId.json"))
+                putExtra(DocumentsContract.EXTRA_INITIAL_URI, (Environment.getExternalStorageDirectory().path + "/SpeakGPT/$chatId.json").toUri())
             }
             fileSaveIntentLauncher.launch(intent)
         }
@@ -1369,8 +1370,8 @@ class ChatActivity : FragmentActivity(), ChatAdapter.OnUpdateListener {
     private fun writeToFile(uri: Uri) {
         try {
             contentResolver.openFileDescriptor(uri, "w")?.use {
-                FileOutputStream(it.fileDescriptor).use {
-                    it.write(
+                FileOutputStream(it.fileDescriptor).use { stream ->
+                    stream.write(
                         fileContents
                     )
                 }
@@ -1928,7 +1929,7 @@ class ChatActivity : FragmentActivity(), ChatAdapter.OnUpdateListener {
 
         val intent = Intent()
         intent.action = Intent.ACTION_VIEW
-        intent.data = Uri.parse("https://www.google.com/search?q=$q")
+        intent.data = "https://www.google.com/search?q=$q".toUri()
         startActivity(intent)
     }
 
