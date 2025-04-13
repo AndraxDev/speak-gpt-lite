@@ -256,6 +256,7 @@ class AdvancedSettingsDialogFragment : BottomSheetDialogFragment() {
                 this@AdvancedSettingsDialogFragment.model = model
 
                 reloadModelList(model)
+                validateForm()
             }
             advancedModelSelectorDialogFragment.show(requireActivity().supportFragmentManager, "advancedModelSelectorDialogFragment")
         }
@@ -266,6 +267,7 @@ class AdvancedSettingsDialogFragment : BottomSheetDialogFragment() {
                 this@AdvancedSettingsDialogFragment.model = model
 
                 reloadModelList(model)
+                validateForm()
             }
             advancedModelSelectorDialogFragment.show(requireActivity().supportFragmentManager, "advancedFavoriteModelSelectorDialogFragment")
         }

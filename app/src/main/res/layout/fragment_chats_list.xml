@@ -103,6 +103,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_settings" />
 
+    <ImageButton
+        android:id="@+id/btn_how_to_use_manual_for_teapots"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btn_accent_tonal"
+        android:contentDescription="How to use SpeakGPT?"
+        android:src="@drawable/ic_help"
+        android:tooltipText="How to use SpeakGPT?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_help" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bg_search"
         android:layout_width="0dp"

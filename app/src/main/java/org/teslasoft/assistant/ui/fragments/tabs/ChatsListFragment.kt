@@ -59,6 +59,7 @@ import org.teslasoft.assistant.lite.R
 import org.teslasoft.assistant.preferences.ChatPreferences
 import org.teslasoft.assistant.preferences.Preferences
 import org.teslasoft.assistant.ui.activities.ChatActivity
+import org.teslasoft.assistant.ui.activities.InstructionsForDegradedTeapotsWithZeroIQDesignedForGoogleReviewersActivity
 import org.teslasoft.assistant.ui.activities.SettingsActivity
 import org.teslasoft.assistant.ui.adapters.ChatListAdapter
 import org.teslasoft.assistant.ui.fragments.dialogs.AddChatDialogFragment
@@ -66,6 +67,7 @@ import org.teslasoft.assistant.util.Hash
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import kotlin.math.abs
+import androidx.core.net.toUri
 
 
 class ChatsListFragment : Fragment(), Preferences.PreferencesChangedListener, ChatListAdapter.OnInteractionListener {
@@ -77,6 +79,7 @@ class ChatsListFragment : Fragment(), Preferences.PreferencesChangedListener, Ch
     private var btnImport: FloatingActionButton? = null
     private var bgSearch: ConstraintLayout? = null
     private var fieldSearch: EditText? = null
+    private var btnManualForTeapots: ImageButton? = null
 
     private var selectedFile: String = ""
     private var searchTerm: String = ""
@@ -177,9 +180,11 @@ class ChatsListFragment : Fragment(), Preferences.PreferencesChangedListener, Ch
     fun reloadAmoled(context: Context) {
         if (!isDestroyed && isDarkThemeEnabled() && preferences!!.getAmoledPitchBlack()) {
             btnSettings?.background = ResourcesCompat.getDrawable(context.resources?: return, R.drawable.btn_accent_tonal_amoled, context.theme)!!
+            btnManualForTeapots?.background = ResourcesCompat.getDrawable(context.resources?: return, R.drawable.btn_accent_tonal_amoled, context.theme)!!
             bgSearch?.background = ResourcesCompat.getDrawable(context.resources?: return, R.drawable.btn_accent_tonal_amoled, context.theme)!!
         } else {
             btnSettings?.background = getDisabledDrawable(ResourcesCompat.getDrawable(context.resources?: return, R.drawable.btn_accent_tonal, context.theme)!!)
+            btnManualForTeapots?.background = getDisabledDrawable(ResourcesCompat.getDrawable(context.resources?: return, R.drawable.btn_accent_tonal, context.theme)!!)
             bgSearch?.background = getDisabledDrawable(ResourcesCompat.getDrawable(context.resources?: return, R.drawable.btn_accent_tonal, context.theme)!!)
         }
     }
@@ -212,6 +217,7 @@ class ChatsListFragment : Fragment(), Preferences.PreferencesChangedListener, Ch
         fieldSearch = view.findViewById(R.id.field_search)
         bgSearch = view.findViewById(R.id.bg_search)
         btnAdd = view.findViewById(R.id.btn_add)
+        btnManualForTeapots = view.findViewById(R.id.btn_how_to_use_manual_for_teapots)
 
         bulkSelectContainer = view.findViewById(R.id.bulk_actions_container)
         btnBulkSelectAll = view.findViewById(R.id.btn_bulk_select_all)
@@ -377,7 +383,7 @@ class ChatsListFragment : Fragment(), Preferences.PreferencesChangedListener, Ch
         }
 
         btnImport?.setOnClickListener {
-            openFile(Uri.parse("/storage/emulated/0/chat.json"))
+            openFile("/storage/emulated/0/chat.json".toUri())
         }
 
         btnBulkSelectAll?.setOnClickListener {
@@ -390,6 +396,10 @@ class ChatsListFragment : Fragment(), Preferences.PreferencesChangedListener, Ch
 
         btnBulkDelete?.setOnClickListener {
             deleteSelected()
+        }
+
+        btnManualForTeapots?.setOnClickListener {
+            startActivity(Intent(requireActivity(), InstructionsForDegradedTeapotsWithZeroIQDesignedForGoogleReviewersActivity::class.java))
         }
 
         btnBulkRename?.setOnClickListener {
@@ -450,8 +460,7 @@ class ChatsListFragment : Fragment(), Preferences.PreferencesChangedListener, Ch
 
     private fun isValidJson(jsonStr: String?): Boolean {
         return try {
-            val gson = Gson()
-            gson.fromJson(jsonStr, ArrayList::class.java)
+            Gson().fromJson(jsonStr, ArrayList::class.java)
             true
         } catch (ex: JsonSyntaxException) {
             false
@@ -472,7 +481,7 @@ class ChatsListFragment : Fragment(), Preferences.PreferencesChangedListener, Ch
         return stringBuilder.toString()
     }
 
-    val activityResultCallback: ActivityResultCallback<ActivityResult> = ActivityResultCallback<ActivityResult> { result ->
+    private val activityResultCallback: ActivityResultCallback<ActivityResult> = ActivityResultCallback<ActivityResult> { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             result.data?.data?.also { uri ->
                 selectedFile = readFile(uri)
